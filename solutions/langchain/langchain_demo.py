@@ -20,6 +20,4 @@ memory = ConversationBufferMemory(memory_key="context")
 chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory)
 
 print(chain.invoke({"instruction": "Which city is the capital of India?"}))
-print(
-    chain.invoke({"instruction": "Which city is has the same functionality in the US?"})
-)
+print(chain.invoke({"instruction": "Which city has the same functionality in the US?"}))

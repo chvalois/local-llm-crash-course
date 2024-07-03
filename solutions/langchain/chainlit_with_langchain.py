@@ -18,13 +18,22 @@ class StreamHandler(BaseCallbackHandler):
         self.msg = cl.Message(content="")
 
 
-# Load quantized Llama 2
+"""# Load quantized Llama 2
 llm = CTransformers(
     model="TheBloke/Llama-2-7B-Chat-GGUF",
     model_file="llama-2-7b-chat.Q2_K.gguf",
     model_type="llama2",
     max_new_tokens=20,
+)"""
+
+# Load quantized Orca Mini
+llm = CTransformers(
+    model="zoltanctoth/orca_mini_3B-GGUF",
+    model_file="orca-mini-3b.q4_0.gguf",
+    model_type="llama2",
+    max_new_tokens=20,
 )
+
 
 template = """
 [INST] <<SYS>>
